@@ -1,0 +1,101 @@
+\chapter{\emph{U Community} - First Application in U Network Platform}
+\section{Service Design}
+\subsection{Topic Mechanism}
+$U$ Community content is organized by topic mechanism, similar to XUE QIU\cite{xueqiu}, each digital asset will become a topic, under which aggregates user generated contents and platform generated content. Users can not only see market movements, news, announcements, but will also be able to see other users who have similar interests in any particular digital assets. 
+\subsection{Follow and Subscribe}
+$U$ Community content distribution is based on the follow and subscribe. Users can follow a single digital asset, and each topic would show the most influential users. We will redirect users from digital currency page to a community of other users following the same currency. 
+\subsection{Content Ranking}
+{\color{red} note: need to discuss how to rank the order of the vote}
+
+
+$U$ Community constructs a content-value prediction market to make quality content stand out. Yet we still need to rank the stream of information base on the time ordering of the post. The ranking algorithm can be represented by the formula \ $f(t_s,y,z)$
+\begin{center}
+$f(t_s,y,z) = \log_{C} z + \frac{yt_s}{45000}$
+\end{center}
+\  $t_s$ denotes how latest the post is. 
+\begin{center}
+    $t_s$ = Posted time\ - Wired-in timestamp. 
+\end{center}
+\ $y \in \{-1,0,1\}$
+$$y =\left\{
+\begin{array}{rcl}
+1       &      & {if \quad x > 0}\\
+0     &      & {if \quad x = 0}\\
+-1     &      & {if \quad x < 0}
+\end{array} \right. $$
+\ $x$ is the difference in the number of upvoters and downvoters
+\begin{center}
+        $x = U - D$
+\end{center}
+\  $U$ is the weighted sum of upvotes, while\ $D$ is the weighted sum of downvotes. 
+\begin{center}
+$U = \sum$ {weighted sum of upvotes} 
+\end{center}
+\begin{center}
+$D = \sum$ {weighted sum of downvotes} 
+\end{center}
+The weight of each vote is calculated by taking the logarithm of total upvotes, adding it with the deposited $Sugar$ $t$.
+$U$ Community users can purchase $Sugar$ and by locking the capital away, users can enjoy extra rights. Only locked $Sugar$ are added to the extra voting power. \par
+
+By reducing the liquidity of $Sugar$, the stakeholders' interests are tied with the community. This way, users are more cautious while voting because they would be acting in their self-interest. Arbitrary votes would jeopardize the utility and effect of the platform.Therefore, $Sugar$ stakeholders are likely to make prudent judgment. They should be given more voting power when it comes content ranking. \par
+Meanwhile, the logarithm operation prevents major stakeholders from having unchecked dictating powers.
+All of these combined with the number of upvotes one receives can objectively show the expertise of a user. 
+\begin{center}
+        User voting weight = $max(0, log_M r) + max (0, log_N t)$
+\end{center}
+$M$ and \ $N$ are two constants, subjects to changes by the community
+\ $z$ is the larger one between \ $x$ absolute value and 1.
+$$z =\left\{
+\begin{array}{rcl}
+|x|       &      & {if \quad |x| \geq 1}\\
+1     &      & {if \quad |x| < 1}\\
+\end{array} \right. $$
+$C$ denotes cool-down constant. To make it clear, inside $\log_{C}$ $z$, $C$ is the base. For example when $C = 10$ it means $z = 10$ can result in 1 point, $z = 100$ will result in 2 points. To put it another way, the first ten voters share a similar weight with the following 90 voters, (and even 100th to 900th voters). It means that for a popular post, the weight is decreasing as the rank of voters is increasing. The larger the $C$ is, the less of an effect a late upvote has.
+The unit of 45000 in the denominator is second, which equals to 12.5 hours. It means posts one day old would have 2 more points in ranking. In other words, posts one day older need to have 100X more votes to sustain the original ranking.  
+\section{Community Role Design}
+$U$ Community is composed of regular users, content creators, content explorers, and community moderators. 
+\subsection{Regular Users}
+Regular users can receive points by completing a given set of tasks. Also, they can transit into content creators by posting new content. And by discovering and upvoting topics, they can be content explorers. They can also be chosen as community moderator.  
+\subsection{Content Creators}
+Content creators are core member in the development of the community. They will receive $Sugar$ as rewards according to the quality of generated content. 
+\subsection{Content Explorers}
+Content Explorers are users upvote a content after viewing it thoroughly. Content explorers can upvote topics to discover quality content for the community. If agreed by more users, one can receive $Sugar$ as rewards. 
+\subsection{Community Moderators}
+Community moderators are selected periodically from regular users. The probability of a user being selected is proportional to the $Sugar$ one is staking. Meanwhile, being selected by the moderator will result in $Sugar$ rewards.
+Community moderators ensure $U$ Community is operating smoothly without turbulence, and have privilege in determining future movement of the community. One of the most important privilege of moderator is the ability to delete improper topics. To prevent abuse of such power, authors of  deleted content can appeal. The appeal request would require a significant amount of $Sugar$ deposit. Users in the community can vote on the incident. Each vote would cost small amount of $Sugar$ to prevent spam voting. After appeal period, if more than half of participants supports the deletion, the appeal initiator would lose the deposit and the users who supported the appeal would also lose their $Sugar$ spent in the voting process. Vice-versa. \par
+The formula to assign rewards for the majority voter is calculated as follows. 
+\begin{center}
+    $${p}=({N}*{c} - {F})/{N_w}$$
+\end{center}
+$p$ is the reward for each users winning the appeal. $N$ is the total number of the users voting for the appeal. $c$ is the cost of casting a vote. $F$ is the processing fee goes to the platform. $N_w$ is the number of majority. This formula ensures each voter will have to use her best judgment to analysis the situation to gain rewards at the end. Therefore preventing trolls casting arbitrary votes. \par
+After the first appeal voting period there is a cool-down period, in which if either the appeal initiator or the community moderator is unsatisfied by the result. She can start a second round of appeal. The extra appeal would require exponentially more deposit than the previous one. If the latest appeal is different from the previous one, the reward allocation for the previous one is voided and the final rewards are allocated based on the latest appeal result. \par
+This process is repeated until both party reach an agreement or either one is unwilling or unable to put down appeal deposit. 
+Community moderators will automatically assign part of $Sugar$ to users supporting them. However if the appeal overturns the original deletion, those $Sugar$ would be rewarded to users who disapproved of the deletion.  
+\section{Token Incentive Design}
+$Sugar$ represents the right to use $U$ Community and its related applications. It's the link between value and content and the link between users.
+$Sugar$ is the value carrier of the $U$ Community. The larger users $U$ Community attracts, the more quality content is produced. $Sugar$, with limited total supply, would benefits all the $Sugar$ stakeholders when the market demand increases.  
+$U$ Network users are not only customers of the platform, but also beneficiaries if the community thrives. 
+	
+\subsection{Incentives for Content Creators, Explorers, and Moderators} 
+To match `Content contribution' with `reward incentives', in $U$ Community content-based prediction market, both quality content creator and content explorer will receive $Sugar$ as rewards.
+Each user can both `upvote' and `downvote' a post. Posts being downvoted would be contained. Thus trolling content would not be spread across the network. 
+There are two major sources of $Sugar$ rewards for content creators and content explorers. One is user purchased $Sugar$, the other one is $Sugar$ converted from reward points  for completing community tasks.
+Those points are gradually released from the system, `content-reward pool'. There is a limit on the daily release. So all the contents have to contend with each other for the limited daily rewards. The 'content-reward pool' will shrink yearly. This policy is set to attract users at an early stage, and aims to develop a network effect to build user base. \par
+The platform will charge 5\% of commission for the reward assigned to content creators and explorers, to ensure the stability of the $U$ Community economy model.
+\subsection{Socialized Investment, Smart-contract based Co-investing}
+Investors can choose to upload trading strategies and order history to $U$ Network to make future decisions in an organized fashion. Also，seasoned investors can share their trading strategies with the whole community, and provide relevant technical or fundamental analysis. Other users can pay to view such content, and become an co-investor of such strategies. With the help of smart contracts, $U$ Community provides a decentralized, reliable way for users to control their own assets, and automatically, completely imitates/clone professional investor's strategy. If the following user made profit by doing so, the smart contract will carry part of the profit to the author of the original strategy. 
+In the future, users can use $Sugar$ to purchase $U$ Community platform investment advice from trusted third party applications. 
+\subsection{Survey, Voting, Prediction Market}
+$U$ Community will provide a way for user to pay to do survey and vote to gain more insights into the information of blockchain assets. $U$ Community will release products with built-in prediction market. $U$ Community will support native prediction markets that are extensible, efficient and accurate.
+\subsection{Advertisement}
+Good content deserves to be spread. Users can promote information to targeted readers. While spreading fake or irreverent content will be punished.  
+Off site collaborators will also be able to publish advertisements inside $U$ Community. However, the content will be strictly reviewed by the community moderators. All the revenue will contribute to the content-reward pool. 
+\subsection{Gift}
+Sending $Sugar$ as a reward is an efficient way of interaction between community celebrities and fans. It's good community culture to pay reward to those who you have been receiving help from. Posts receiving higher rewards will have a higher exposure in the community. Users can pay $Sugar$ to unlock extra features like medal and skins. 5\% of the reward will go to 'content-reward pool'. The rest will be received by the beneficiaries. 
+\subsection{Paid Subscription, Paid Q\&A, Pay to Message}
+Users can pay $Sugar$ to request private interactions with influential professionals, and receive personalized advice. There are three forms of interaction: paid Subscription, paid Q\&A, pay to message. 
+Paid subscription provides a way for influential individuals to make monetary profit with their knowledge and influence. After receiving a given amount of upvotes, content creators can setup a private group or private channel to provide more insightful information to those who are willing to pay $Sugar$ as an entry fee. 
+	
+Users can also choose a more active way of interaction. After paying a certain amount of $Sugar$, users can ask specific questions to a specific individual. The answer can be set visible to the public or private, in which other parties need to pay to 'peek'. The payment is awarded proportionally to the initiator based on the quality.   							
+To filter unsolicited messages, users can set minimal payment that has to come with a private message. Money is an effective way to filter unworthy communication and harassment. 
+The platform takes 5\% commission from paid subscription, paid Q\&A, pay to message. 

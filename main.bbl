@@ -1,0 +1,55 @@
+\begin{thebibliography}{10}
+
+\bibitem{ipfs}
+Juan Benet.
+\newblock Ipfs - content addressed, versioned, p2p file system.
+
+\bibitem{efficient}
+J.~S. Jordan.
+\newblock On the efficient markets hypothesis.
+\newblock {\em Econometrica}, pages 1325--1343, 1983.
+
+\bibitem{prediction}
+Justin Wolfers, Eric Zitzewitz, Justin Wolfers, and Eric Zitzewitz.
+\newblock Prediction markets.
+\newblock {\em J. Economic Perspectives}, pages 107--126, 2004.
+
+\bibitem{spencerkimball}
+Spencer Kimball.
+\newblock Alibaba sales surge \$5 billion in first 15 minutes on singles day.
+
+\bibitem{amazonlatency}
+Nati Shalom.
+\newblock Amazon found every 100ms of latency cost them 1\% in sales.
+
+\bibitem{pbft}
+Miguel Castro and Barbara Liskov.
+\newblock Practical byzantine fault tolerance.
+\newblock In {\em Proceedings of the Third Symposium on Operating Systems
+  Design and Implementation}, OSDI '99, pages 173--186, Berkeley, CA, USA,
+  1999. USENIX Association.
+
+\bibitem{bft_perf}
+Vukolić M.
+\newblock The quest for scalable blockchain fabric: Proof-of-work vs. bft
+  replication.
+\newblock 2015.
+
+\bibitem{xueqiu}
+XUEQIU.
+\newblock xueqiu.com.
+
+\bibitem{bitcoin}
+Satoshi Nakamoto.
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+
+\bibitem{eth}
+Vitalik Buterin.
+\newblock A next-generation smart contract and decentralized application
+  platform.
+
+\bibitem{eth2}
+Gavin Wood.
+\newblock Ethereum: a secure decentralised generalised transaction ledger.
+
+\end{thebibliography}

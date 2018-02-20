@@ -1,0 +1,49 @@
+\chapter{To-Do List}
+
+The \emph{U  Network} is an open-source project that can be found at ``https://github.com/U-Network/UNetwork''. At the early stage of development, there are many tasks need to be finished. Partial work on the list is following:
+
+
+\begin{enumerate}
+
+\item {\bf Revision of Document}: 
+\begin{enumerate}
+\item Revise README document and composite a short version. It should clearly explain the fundamental blockchain system of  \emph{U  Network}, provide summary of features, and point out future directions. 
+\item Remove docus/specification directory.
+\item Add more documents regarding testing and deployment of  \emph{U  Network}.
+\end{enumerate}
+
+        
+
+\item {\bf Coding Style Convention}: 
+\begin{enumerate}
+\item Current coding style is inconsistent. It is advisable to modify the entire code repository.
+\item Suggested Golang coding standard: 
+
+\textit{https://github.com/golang/go/wiki/CodeReviewComments}
+\end{enumerate}
+
+\item {\bf Redundant Code Removal}:
+\begin{enumerate}
+\item remove directories: cli/LevelDBQuery, cli/consensus, consensus/sbft, net/rpt\_test
+\item remove files: account/account\_test.go, consensus/policy.go, consensus/policyLevel.go, core/transaction/txAttribute\_test.go
+\end{enumerate}
+
+\item {\bf Continuous Integration}:
+\begin{enumerate}
+\item Use Travis CI to automatically compile and build after each check-in delivery.
+\end{enumerate}
+
+
+\item {\bf Bug Fix and Improvement}:
+\begin{enumerate}
+\item  move the hash generation of transaction into core/transaction/TransactionBuilder.go
+\item  enforce consistent address format of registered asset, such as prefix.
+\item modify the redundant interface of RPC. 
+\end{enumerate}
+
+
+% external end
+\end{enumerate}
+
+
+\clearpage

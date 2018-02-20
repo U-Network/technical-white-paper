@@ -1,0 +1,111 @@
+\chapter{\emph{U Network} Platform Design}
+\section{Design Principle}
+\emph{U Network} follows two simple but critical principles in building an efficient content-value prediction market.
+\begin{theorem}
+There Ain't No Such Thing As A Free Lunch
+\end{theorem}
+In an efficient market, there ain't no such thing as a free lunch\footnote{tanstaafl: https://www.investopedia.com/terms/t/tanstaafl.asp}. One has to pay certain cost or price in order to gain profit. In \emph{U Network}, any user needs to pay certain amount of \emph{U Network} tokens to up-vote a piece of contents, and receive token rewards if the content prove to be high-quality with more value eventually. 
+
+Following this policy, any expected profit reward has to cost an initial price payment. The other advantage of this principle is to prevent malicious users gaming or cheating this market mechanism for profit.
+
+\begin{theorem}
+ Principle of Fairness
+\end{theorem}
+To build an efficient market, it is imperative to treat every participant to be equal. First of all, every participant in the market should be able to receive incentive rewards that are proportional to his/her contribution. It is similar to stock options in startup companies where major contributors receive more stock rewards than others due to their significant contributions. 
+
+In addition, every ``contribution'' should be appreciated and valued equally. Any one who contribute time and effort to create, discover, and distribution high-value contents should be valued equally and receive rewards. Towards this end, when users pay tokens to up-vote the contents, \emph{U Network} assigns portion of tokens to creators for rewarding their contribution, which further inspire them adding more high-quality contents. In the same time, users who promote these contents using tokens in their up-votes can also receive rewards for successfully discovering valuable contents. 
+
+As such, the \emph{U Network} platform implements a mechanism that redistributes token income to both creators and up-voters.  Moreover, users who discover valuable contents early receive higher expected rewards than those late. This mechanism encourages users to early discover high-quality contents, therefore, making valuable contents easier to stand out. 
+
+\section{Economic Incentive Design}
+To create an efficient content-value driven prediction market, the most important component is the incentive mechanism. In this section, we further explain the economic incentive design in \emph{U Network}.
+
+\subsection{Cost of Voting}
+In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of each up-vote as a function in the below:
+ \begin{center}
+$$C = p_0 + p * log(N)$$
+\end{center}
+where $C$ is the cost for current up-vote, $p_0$ is the initial cost for the first up-voter, $p$ is the reference basis cost and $N$ is the total number of up-voters until now. 
+
+Clearly, this function determines the dynamic cost for each up-vote.  With more up-voting for the content, $N$ becomes larger and thus $p * log(N)$ and resulting $C$ increases.  Here, logarithm function is used to suppress unexpected increase of function value. Otherwise, the cost $C$ becomes extremely high so no more users would like to up-vote. Then the incentive mechanism would fail.
+
+\subsection{Author Reward}
+According to the sequential order of upvoting, the cost of \emph{U Network} tokens coming from all up-voters will be distributed to the creator and early up-voters. The formula of author reward is derived from harmonic series: 
+\begin{center}
+$$R = C * \sum_{k=1}^{N}  (\lambda + 1)/{(k + \lambda)}$$
+\end{center}
+$N$ is the total number of upvotes within a given period of time. $k$ is the rank of each up-vote. $C$ is the cost for each up-vote. $\lambda$ is a weight parameter: the larger $\lambda$ determines more rewards that the author receives. 
+
+If $\lambda = 0$, all of the token payment from the \emph{first} up-voter would be distributed to the author, while only half of the token payment from the \emph{second} up-voter will be paid to the author. 
+
+If $\lambda = 0.5$, the \emph{first} up-voter would contribute all token payment to the author, and the \emph{second} up-voter would contribute $3/5$ token payment to the author. 
+
+
+\subsection{Content Explorer Reward}
+The up-voters who explore and promote high-quality contents with tokens will receive rewards for their contributions to the community. The reward formula for explorer $R_r$ is below:
+\begin{center}
+$$R_r = C * \sum_{k=r+1}^{N} 1/{(k + \lambda)}$$
+\end{center}
+$r$ is the rank of explorer or up-voters. If the total number of up-voters is fixed, the earlier up-votes receive higher expected rewards. This mechanism distributes more incentives to up-voters in the early stage, therefore, it encourages voters to discover valuable contents earlier.
+ 
+According this formula, if $\lambda = 0$, the second up-voter would only contribute $1/2$ tokens to the content author, while the remaining $1/2$ tokens would be paid to the \emph{first} up-voter. As such, the third up-voter would pay $1/3$ token to each of content author, first up-voter, and the second up-voter. It's mathematically provable that the first $35\%$ of up-voters have positive expected return.     
+\begin{center}
+$$R_r = C * \sum_{k=r+1}^{N} \frac{1}{k}$$ 
+\end{center}
+Simple arithmetic calculation proves that up-voter can expect positive expected return:
+\begin{center}
+$$R_r \geq C \texttt{ if and only if } {r}>=0.35*{N} $$
+\end{center}
+In this mechanism, the content author would take the largest piece of the income benefit. And early up-voters will have positive expected returns as an incentive reward for exploring quality content earlier. 
+
+
+\subsection{Other Contributor Rewards}
+At this point, there is a question that may rise: ``What if users do not have any \emph{U Network}  tokens? Can they still contribution to the community?''
+
+The short answer is no,users without \emph{U Network}  token can still contribute time and attention instead of paying token for up-vote. Based on Principle No.1 (There Ain't No Such Thing As A Free Lunch), users can receive \emph{U Network}  points by spending time and energy in completing micro tasks for the community. For example, they may receive points by signing-in daily, referring friends and distributing the high-quality contents to other channels. These points can be converted into \emph{U Network}  tokens and thus used for voting.  
+
+To prevent malicious spam sign-up and web-bot attack, we impose a restriction: there is a dynamic hard-cap on how many points one single user can earn considering the community economy and user activities. As such, users are encouraged to create or promote valuable contents to earn \emph{U Network} tokens without limit or cap. 
+
+\subsection{Delayed Settlement}
+After each content is created, there is a period of time window in which the topic is open to critique from community users. If the content is eye-catching but violates the community policy (i.e., violent and sexual contents), the rewards to the author may be revoked or contributed to the \emph{U Network} reward pool for public goods in the community. The length of the time-period is set to be 7-days but can be changed dynamically upon the agreement of the community users.
+
+\subsection{Downvote}
+Existing user-generated-content communities rarely have down-vote options. To fully distinguish valuable contents from low-quality ones, \emph{U Network} allows users to down-vote contents and demote them correspondingly.
+
+Similarly, ``Down-vote" requires \emph{U Network} tokens as well. The formula of down-vote reward $R_d$ is similar to ``Up-vote'':
+\begin{center}
+$$R_d = \hat C * \sum_{k=r+1}^{N} \frac{1}{k}$$
+\end{center}
+Where $\hat C$ is the cost of down-vote:
+ \begin{center}
+$$\hat C = \hat p_0 + \hat p * log(N)$$
+\end{center}
+Here, $\hat p_0$ is the initial cost for the first down-voter, $\hat p$ is the reference basis cost and $N$ is the total number of down-voters until now. 
+ 
+If the contents receive more down-votes, the earlier down-voters receive higher expected rewards from the token payment of later down-voters. The distribution of token rewards to explorers is similar to that for up-vote, while the content creator receives no reward at all. 
+
+
+
+
+\section{Functionality Design}
+\subsection{ Information Valuation}
+With the rapid development of information technology, it becomes hard to find valuable and reliable information from the Internet with less effort.  
+
+One important functionality is that \emph{U Network} implements the content-valuation with prediction market and powered by blockchain technology. 
+In this community, content creators and explorer can receive monetized token payment to promote high-quality contents, therefore, making it effortless to access valuable information.
+
+\subsection{Incentive Community With U Network Token}
+\emph{U Network} dedicates to create a content-valuation platform which is driven by quality and value. Therefore, it is a must to properly reward contributors of high-quality contents. As such, creators should take most income benefit for their original contribution of valuable contents.
+
+In the meantime, those valuable contents should be explored and promoted to more users in an effective approach. To this end, users who help to discover and promote valuable contents should receive rewards. 
+
+As such, both authors and explorer of quality contents receive \emph{U Network} tokens from up-voters as rewards. 
+
+\subsection{Revolutionary Economy Model}	
+Existing online communities honor Internet Celebrity Economy, where celebrity attracts the attention of Internet fans or users and the community receives all profit rewards through advertising income. For example, Facebook are the social networking platform that takes most of the advertisement cuts, 97\% of their profits come from ads. In this scenario, the major beneficiaries are only the internet platform.
+
+\emph{U Network} aims to modify existing economic model, and distribute profit income to all participants of the community. It wipes out the middle-man, ``the user-generated-content platform'',  from the income distribution list and allows contents creators and audience to benefit from their contributions. 
+
+With the help of blockchain and smart contract, \emph{U Network} provides a decentralized, reliable community for users to receive their benefit. When the valuable receive up-votes from users, both the creator and previous up-voters will automatically receive the partial token payment from the current up-voter which is defined inside smart contract. There is no need of human interference, therefore, making this token distribution process accurate and reliable.  
+
+To sum up, \emph{U Network}  is a content-valuation community driving by quality. \emph{U Network} provides a reliable approach to incentive creators and explorers to keep adding and promoting high-quality contents. 

@@ -1,0 +1,91 @@
+\documentclass[12pt,twoside]{mitthesis}
+\usepackage{lgrind}
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumii}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}
+
+%\usepackage{biblatex}
+%\addbibresource{reference.bib}
+
+\renewenvironment{abstract}{%
+    \clearpage
+    \null\vfil
+    \begin{center}%
+        {\bfseries \abstractname}%
+    \end{center}%
+    }
+{\endquotation\vfil\null\clearpage}
+
+
+\begin{document}
+
+
+\begin{center}
+\large\textbf{U Network: The Decentralized Content Valuation \& Publishing Platform}
+\end{center}
+\vspace{1cm}
+
+
+\begin{center}
+\large\textbf{Technical White Paper}
+\end{center}
+
+\begin{center}
+\textbf{version 0.2.0}
+
+\end{center}
+\vspace{4cm}
+
+\begin{center}
+\textit{Draft for open community review and subject to change.}
+\end{center}
+
+\pagestyle{empty}
+
+
+%  abstract
+\include{abstract}
+
+% list of contents - automatically generated, do not change
+\pagestyle{plain}
+\include{contents}
+
+% chapter 1: introduction
+\include{intro}
+
+% chapter 2: U network Design
+\include{design}
+
+% chapter 4:  Public Chain Implementation
+\include{publicChain}
+
+% chapter 3: U community Design
+\include{community}
+
+% chapter 5: RoadMap
+\include{roadmap}
+
+% chapter 6: conclusion
+\include{conclusion}
+
+\appendix
+\include{QnA}
+
+%\include{biblio.tex}
+
+\bibliographystyle{unsrt}
+\bibliography{reference}
+
+%\printbibliography
+
+\end{document}
+

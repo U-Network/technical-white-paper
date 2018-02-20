@@ -1,0 +1,69 @@
+\contentsline {chapter}{\numberline {1}Introduction}{7}
+\contentsline {section}{\numberline {1.1}Background}{7}
+\contentsline {subsection}{\numberline {1.1.1}Inforamtion Overload}{7}
+\contentsline {subsection}{\numberline {1.1.2}Problems of Centralized Platforms}{8}
+\contentsline {section}{\numberline {1.2}Why \emph {U Network} ?}{9}
+\contentsline {subsection}{\numberline {1.2.1}Mission of \emph {U Network}}{9}
+\contentsline {subsection}{\numberline {1.2.2}Content-Value based Prediction Market}{10}
+\contentsline {chapter}{\numberline {2}\emph {U Network} Platform Design}{13}
+\contentsline {section}{\numberline {2.1}Design Principle}{13}
+\contentsline {section}{\numberline {2.2}Economic Incentive Design}{14}
+\contentsline {subsection}{\numberline {2.2.1}Cost of Voting}{14}
+\contentsline {subsection}{\numberline {2.2.2}Author Reward}{15}
+\contentsline {subsection}{\numberline {2.2.3}Content Explorer Reward}{15}
+\contentsline {subsection}{\numberline {2.2.4}Other Contributor Rewards}{16}
+\contentsline {subsection}{\numberline {2.2.5}Delayed Settlement}{17}
+\contentsline {subsection}{\numberline {2.2.6}Downvote}{17}
+\contentsline {section}{\numberline {2.3}Functionality Design}{18}
+\contentsline {subsection}{\numberline {2.3.1} Information Valuation}{18}
+\contentsline {subsection}{\numberline {2.3.2}Incentive Community With U Network Token}{18}
+\contentsline {subsection}{\numberline {2.3.3}Revolutionary Economy Model}{19}
+\contentsline {chapter}{\numberline {3}\emph {U Network} Platform Implementation}{21}
+\contentsline {section}{\numberline {3.1}Requirements for Blockchain Platform}{21}
+\contentsline {section}{\numberline {3.2}Technical Architecture}{22}
+\contentsline {section}{\numberline {3.3}UBFT Consensus Protocol}{23}
+\contentsline {subsection}{\numberline {3.3.1}UBFT}{23}
+\contentsline {subsection}{\numberline {3.3.2}Terms Used}{25}
+\contentsline {subsection}{\numberline {3.3.3}Assumption of Protocol}{25}
+\contentsline {subsection}{\numberline {3.3.4}Security of Protocol}{26}
+\contentsline {subsection}{\numberline {3.3.5}Performance}{27}
+\contentsline {subsection}{\numberline {3.3.6}Governance of Protocol}{29}
+\contentsline {section}{\numberline {3.4}Transaction Prococol}{29}
+\contentsline {subsection}{\numberline {3.4.1}Transaction Definition}{29}
+\contentsline {subsection}{\numberline {3.4.2}Deterministic Sequential Execution}{30}
+\contentsline {section}{\numberline {3.5}Content Storage and Search}{30}
+\contentsline {subsection}{\numberline {3.5.1}Content Creation and Storage}{31}
+\contentsline {subsection}{\numberline {3.5.2}Content Search}{31}
+\contentsline {subsection}{\numberline {3.5.3}Improvements}{31}
+\contentsline {section}{\numberline {3.6}Token Incentive for Resources}{32}
+\contentsline {subsection}{\numberline {3.6.1}Storage Costs}{32}
+\contentsline {subsection}{\numberline {3.6.2}Bandwidth Costs}{32}
+\contentsline {subsection}{\numberline {3.6.3}Computation Costs}{32}
+\contentsline {chapter}{\numberline {4}\emph {U Community} - First Application in U Network Platform}{33}
+\contentsline {section}{\numberline {4.1}Service Design}{33}
+\contentsline {subsection}{\numberline {4.1.1}Topic Mechanism}{33}
+\contentsline {subsection}{\numberline {4.1.2}Follow and Subscribe}{33}
+\contentsline {subsection}{\numberline {4.1.3}Content Ranking}{33}
+\contentsline {section}{\numberline {4.2}Community Role Design}{35}
+\contentsline {subsection}{\numberline {4.2.1}Regular Users}{35}
+\contentsline {subsection}{\numberline {4.2.2}Content Creators}{36}
+\contentsline {subsection}{\numberline {4.2.3}Content Explorers}{36}
+\contentsline {subsection}{\numberline {4.2.4}Community Moderators}{36}
+\contentsline {section}{\numberline {4.3}Token Incentive Design}{37}
+\contentsline {subsection}{\numberline {4.3.1}Incentives for Content Creators, Explorers, and Moderators}{37}
+\contentsline {subsection}{\numberline {4.3.2}Socialized Investment, Smart-contract based Co-investing}{38}
+\contentsline {subsection}{\numberline {4.3.3}Survey, Voting, Prediction Market}{38}
+\contentsline {subsection}{\numberline {4.3.4}Advertisement}{39}
+\contentsline {subsection}{\numberline {4.3.5}Gift}{39}
+\contentsline {subsection}{\numberline {4.3.6}Paid Subscription, Paid Q\&A, Pay to Message}{39}
+\contentsline {chapter}{\numberline {5}Future Direction and Roadmap}{41}
+\contentsline {section}{\numberline {5.1}Future U Network Evolution}{41}
+\contentsline {section}{\numberline {5.2}Future Application Use Case}{42}
+\contentsline {subsection}{\numberline {5.2.1}Communities for Valuable Digital Literature}{42}
+\contentsline {subsection}{\numberline {5.2.2} Communities for Digital Asset}{42}
+\contentsline {subsection}{\numberline {5.2.3}Communities for Knowledge Sharing}{42}
+\contentsline {subsection}{\numberline {5.2.4}Communities for Social Media}{43}
+\contentsline {subsection}{\numberline {5.2.5}Communities for Intelligent Property}{43}
+\contentsline {section}{\numberline {5.3}Roadmap}{43}
+\contentsline {chapter}{\numberline {6}Conclusion}{45}
+\contentsline {chapter}{\numberline {A}To-Do List}{47}
