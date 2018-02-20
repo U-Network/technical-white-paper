@@ -1,6 +1,8 @@
 # technical-white-paper
 ### Latex files for U network technical white paper
 
+* To compile the project, use latex to compile the "main.tex" file and it will generate pdf file.
+
 * Folder Structure
 
 | file | description  |
