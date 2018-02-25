@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 FEB 2018 17:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 FEB 2018 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -288,11 +288,11 @@ Overfull \hbox (27.44101pt too wide) in paragraph at lines 34--35
  Tol-er-ant (PBFT) algorithm[[]].
  []
 
-<consensus.png, id=101, 501.875pt x 661.47125pt>
+<consensus.png, id=101, 752.8125pt x 992.20688pt>
 File: consensus.png Graphic file (type png)
  <use consensus.png>
 Package pdftex.def Info: consensus.png used on input line 38.
-(pdftex.def)             Requested size: 303.53267pt x 400.07527pt.
+(pdftex.def)             Requested size: 303.53267pt x 400.07024pt.
  [23 <./Network.png>] [24 <./consensus.png>] [25] [26] [27]
 <bft_perf.png, id=120, 362.7954pt x 244.2726pt>
 File: bft_perf.png Graphic file (type png)
@@ -368,10 +368,10 @@ tion/TransactionBuilder.go
 (./intro.aux) (./design.aux) (./publicChain.aux) (./community.aux)
 (./roadmap.aux) (./conclusion.aux) (./QnA.aux)) ) 
 Here is how much of TeX's memory you used:
- 2500 strings out of 492995
- 34846 string characters out of 6132704
- 97890 words of memory out of 5000000
- 5889 multiletter control sequences out of 15000+600000
+ 2501 strings out of 492995
+ 34851 string characters out of 6132704
+ 97894 words of memory out of 5000000
+ 5890 multiletter control sequences out of 15000+600000
  19329 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,8n,25p,1302b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -400,7 +400,7 @@ rm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
 00.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200.p
 fb>
-Output written on main.pdf (49 pages, 830379 bytes).
+Output written on main.pdf (49 pages, 828604 bytes).
 PDF statistics:
  270 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams

@@ -29,6 +29,10 @@ Miguel Castro and Barbara Liskov.
   Design and Implementation}, OSDI '99, pages 173--186, Berkeley, CA, USA,
   1999. USENIX Association.
 
+\bibitem{neo}
+Erik Zhang.
+\newblock A byzantine fault tolerance algorithm for blockchain.
+
 \bibitem{bft_perf}
 Vukolić M.
 \newblock The quest for scalable blockchain fabric: Proof-of-work vs. bft
