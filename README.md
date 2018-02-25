@@ -17,11 +17,3 @@
 | conclusion.tex | conclusion of the paper |
 | QnA.tex | todo list of tasks |
 
-* ToDo List
-
-
-| section | work to do  |
-| ------ | ------ |
-| fig 3-2 | need to redraw it and mark reference |
-| 3.3.6 | discuss how to upgrade the protocol |
-| 4 | polish and reorganize if necessary |
