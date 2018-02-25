@@ -27,35 +27,28 @@
 \contentsline {subsection}{\numberline {3.3.3}Assumption of Protocol}{25}
 \contentsline {subsection}{\numberline {3.3.4}Security of Protocol}{26}
 \contentsline {subsection}{\numberline {3.3.5}Performance}{27}
-\contentsline {subsection}{\numberline {3.3.6}Governance of Protocol}{29}
 \contentsline {section}{\numberline {3.4}Transaction Prococol}{29}
-\contentsline {subsection}{\numberline {3.4.1}Transaction Definition}{29}
-\contentsline {subsection}{\numberline {3.4.2}Deterministic Sequential Execution}{30}
 \contentsline {section}{\numberline {3.5}Content Storage and Search}{30}
-\contentsline {subsection}{\numberline {3.5.1}Content Creation and Storage}{31}
+\contentsline {subsection}{\numberline {3.5.1}Content Creation and Storage}{30}
 \contentsline {subsection}{\numberline {3.5.2}Content Search}{31}
 \contentsline {subsection}{\numberline {3.5.3}Improvements}{31}
-\contentsline {section}{\numberline {3.6}Token Incentive for Resources}{32}
-\contentsline {subsection}{\numberline {3.6.1}Storage Costs}{32}
+\contentsline {section}{\numberline {3.6}Token Incentive for Resources}{31}
+\contentsline {subsection}{\numberline {3.6.1}Storage Costs}{31}
 \contentsline {subsection}{\numberline {3.6.2}Bandwidth Costs}{32}
 \contentsline {subsection}{\numberline {3.6.3}Computation Costs}{32}
 \contentsline {chapter}{\numberline {4}\emph {U Community} - First Application in U Network Platform}{33}
 \contentsline {section}{\numberline {4.1}Service Design}{33}
-\contentsline {subsection}{\numberline {4.1.1}Topic Mechanism}{33}
-\contentsline {subsection}{\numberline {4.1.2}Follow and Subscribe}{33}
-\contentsline {subsection}{\numberline {4.1.3}Content Ranking}{33}
-\contentsline {section}{\numberline {4.2}Community Role Design}{35}
-\contentsline {subsection}{\numberline {4.2.1}Regular Users}{35}
-\contentsline {subsection}{\numberline {4.2.2}Content Creators}{36}
-\contentsline {subsection}{\numberline {4.2.3}Content Explorers}{36}
-\contentsline {subsection}{\numberline {4.2.4}Community Moderators}{36}
-\contentsline {section}{\numberline {4.3}Token Incentive Design}{37}
-\contentsline {subsection}{\numberline {4.3.1}Incentives for Content Creators, Explorers, and Moderators}{37}
-\contentsline {subsection}{\numberline {4.3.2}Socialized Investment, Smart-contract based Co-investing}{38}
-\contentsline {subsection}{\numberline {4.3.3}Survey, Voting, Prediction Market}{38}
-\contentsline {subsection}{\numberline {4.3.4}Advertisement}{39}
-\contentsline {subsection}{\numberline {4.3.5}Gift}{39}
-\contentsline {subsection}{\numberline {4.3.6}Paid Subscription, Paid Q\&A, Pay to Message}{39}
+\contentsline {subsection}{\numberline {4.1.1}Topic Mechanism}{34}
+\contentsline {subsection}{\numberline {4.1.2}Publish and Subscribe}{34}
+\contentsline {subsection}{\numberline {4.1.3}Content Ranking}{34}
+\contentsline {section}{\numberline {4.2}Community Role Design}{36}
+\contentsline {subsection}{\numberline {4.2.1}Regular Users}{36}
+\contentsline {subsection}{\numberline {4.2.2}Content Creators}{37}
+\contentsline {subsection}{\numberline {4.2.3}Content Explorers}{37}
+\contentsline {subsection}{\numberline {4.2.4}Community Moderators}{37}
+\contentsline {section}{\numberline {4.3}Token Incentive Design}{38}
+\contentsline {subsection}{\numberline {4.3.1}Incentives for Content Creators, Explorers, and Moderators}{39}
+\contentsline {subsection}{\numberline {4.3.2}Incentive for Knowledge Sharing}{39}
 \contentsline {chapter}{\numberline {5}Future Direction and Roadmap}{41}
 \contentsline {section}{\numberline {5.1}Future U Network Evolution}{41}
 \contentsline {section}{\numberline {5.2}Future Application Use Case}{42}

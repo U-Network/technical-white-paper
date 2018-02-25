@@ -98,13 +98,13 @@ BFT and its derivatives, on the other hand, could only support a limited number 
 
 Based on the previous observation, UBFT tried to hit the sweet spot between the node scalability and performance. By carefully choosing the number of validation nodes, consensus can be reached in a considerable fast speed. At the same time, UBFT can also support thousands of transactions per second and matches the latency of network. In addition, the centralization could be avoided by adopting the delicate producer election process, which involve both the opinions from maintainers and platform users. By doing so, we tried to achieve an optimal balance between the scalability and the throughput performance, fit the demand of our applications and guarantee our decentralization philosophy.
 
-\subsection{Governance of Protocol}
+%\subsection{Governance of Protocol}
 %{\color{red} note: discuss how do we upgrade our consensus protocol in the future}
 
 
 \section{Transaction Prococol}
 
-\subsection{Transaction Definition}
+%\subsection{Transaction Definition}
 	In blockchain, transaction is defined as the change of ledger. It's a data structure compiled in binary that contains critical information like transaction type, transaction amount, sender address, and receiver address, time stamp, etc. All of these distinguish a transaction, and are used in both validating nodes and service nodes.  
 
     One major difference between \emph{U Network} blockchain and other blockchains is that we aim to make transaction types extensible, thus making it forward-compatible to applications. 
@@ -121,15 +121,10 @@ Based on the previous observation, UBFT tried to hit the sweet spot between the 
     \item )Smart contract message call: call deployed smart contract
     \item )Asset lock down: asset owner can lock the blockchain height
 	\end{enumerate}
-
-\subsection{Deterministic Sequential Execution}
-%{\color{red} note: discuss how do we achieve to confirm a transactions as fast as 6 seconds and could concurrently process up to 3000 transactions per second}
-
+	
 In order to defend against double-spent attack, all the pending transactions need to be confirmed sequentially in a deterministic way. Each validating node will have a pool of unconfirmed transactions. Given the efficiency of UBFT consensus algorithm, each verification node can verify up to 3000 transactions within 6 seconds of block time. To put it in another word, the blockchain can concurrently process 3000 transactions while keeping the transaction flow sequential. 
 
-%{\color{red} note: discuss how make users' votes sequential along the time, so earlier vote get paid from the latter's payment}
 
-As a significant component of \emph{U Network}, voting is a form of transaction. Each vote can be considered as a micro-payment, which is time-stamped, and paid to a smart-contract address. Each time stamp is an unsigned 64 bit integer, and the value is assigned by the validating node. The smart contract can access the time stamp to assign the order-based U-Token rewards. To prevent the 'Time Travel' attack, each verification node will only accept transactions whose time stamps are in a valid range. Therefore no malicious user can modify the time stamp of the vote to cut in line.  
 
 \section{Content Storage and Search}
 \emph{U Network} internally leverages the IPFS (Inter Planetary File System \cite{ipfs}) for storing the content. IPFS is a distributed file system that seeks to connect all computing devices with the same system of files. In some ways, this is similar to the original aims of the Web, but IPFS is actually more similar to a single bittorrent swarm exchanging git objects. With IPFS, any content published in the IPFS network will be persistented forever, and accessed freely, easily and efficiently without being worried about the link expiration like HTTP. 

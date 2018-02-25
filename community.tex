@@ -1,106 +1,124 @@
 \chapter{\emph{U Community} - First Application in U Network Platform}
 \section{Service Design}
-As described in section 3.2, one of major components of U-Network is web service node. The service nodes cluster will act as an aggregated service provider, which is inherently advantagrous because the load-balancing and fault tolerant natures of a distributed system. Each web service node will implement a highly scalable and extensible service processing and information transmitting protocol that ensures the speed and stability of basic forum services. 
-The forum data will be stored across the web service nodes, thus maximally ensures the consistancy of user data. Each time one user makes an interaction, in nature the user is making a https request to one of the web service nodes based on the avaliability. Each web service request may accompany one or more on-chain transaction request that interacts with the blockchain in cope with reward system. 
-\subsection{Topic Mechanism}
-$U$ Community content is organized by topic mechanism, similar to XUE QIU\cite{xueqiu}, each digital asset will become a topic, under which aggregates user generated contents and platform generated content. Users can not only see market movements, news, announcements, but will also be able to see other users who have similar interests in any particular digital assets. 
-\subsection{Follow and Subscribe}
-$U$ Community content distribution is based on the follow and subscribe. Users can follow a single digital asset, and each topic would show the most influential users. We will redirect users from digital currency page to a community of other users following the same currency. 
-\subsection{Content Ranking}
-{\color{red} note: need to discuss how to rank the order of the vote}
-{\color{blue} could move the vote ranking explanation from 3.4 to here}
 
-$U$ Community constructs a content-value prediction market to make quality content stand out. Yet we still need to rank the stream of information base on the time ordering of the post. The ranking algorithm can be represented by the formula \ $f(t_s,y,z)$
+As described in section 3.2, one of major components of \emph{U Network} is web service node. The cluster of service nodes will act as an aggregated service provider, which has inherent advantages due to the load-balancing and fault tolerant features of distributed systems. Each web service node implements a highly scalable and extensible protocol as the key component of forum services, which can process information with faster speed and improved stability. 
+
+The forum data will be stored across the web service nodes, which guarantees the availability and consistency of user data due to redundant duplicates. In this way, each time users make an interaction with the \emph{U Network}, they actually make a \emph{https} request to one of the available web service nodes. For efficiency consideration, each request may include one or more on-chain transaction requests that interact with the \emph{U Network} blockchain. 
+\subsection{Topic Mechanism}
+\emph{U Community} content is organized by topic mechanism. Similar to XUE QIU\cite{xueqiu}, each digital asset will formulated as a ``topic'', which contains both user generated contents and platform generated contents belonging to the same type of asset. Here, the platform generated contents include general information, news and announcements in \emph{U Community}. As such, users can browse both the platform information and other user generated contents with the similar topic.  
+\subsection{Publish and Subscribe}
+\emph{U Community} content distribution is based on the publish and subscribe model. Contents creator can publish their articles or any other digital assets in the community, while audience can subscribe creators or topics and receive new updates. In the mean time, users can cancel their subscription anytime when the contents or topic becomes unattractive to them. 
+\subsection{Content Ranking}
+%{\color{red} note: need to discuss how to rank the order of the vote}
+%{\color{blue} could move the vote ranking explanation from 3.4 to here}
+
+\emph{U Community} constructs a content-value prediction market to promote quality contents to more audience. As the critical component, it is very important to rank the stream of contents and their votes so that to determine their sequential orders. The ranking algorithm can be represented by the formula below:
 \begin{center}
-$f(t_s,y,z) = \log_{C} z + \frac{yt_s}{45000}$
+$f(t_s,y,z) = \log_{C} z + \frac{y * t_s}{45000}$
 \end{center}
-\  $t_s$ denotes how latest the post is. 
+\  $t_s$ denotes the lifetime of the post which is the time period since content is created:
 \begin{center}
-    $t_s$ = Posted time\ - Wired-in timestamp. 
+    $t_s = T_{posted} - T_{created}$
 \end{center}
-\ $y \in \{-1,0,1\}$
+$y$ is the indicator function and \ $y \in \{-1,0,1\}$
 $$y =\left\{
 \begin{array}{rcl}
 1       &      & {if \quad x > 0}\\
 0     &      & {if \quad x = 0}\\
 -1     &      & {if \quad x < 0}
 \end{array} \right. $$
-\ $x$ is the difference in the number of upvoters and downvoters
+\ $x$ is the count difference of up-votes and down-votes
 \begin{center}
         $x = U - D$
 \end{center}
-\  $U$ is the weighted sum of upvotes, while\ $D$ is the weighted sum of downvotes. 
+\  $U$ is the weighted sum of upvotes, while\ $D$ is the weighted sum of downvotes. Specifically, $w_{U}^{i}$ is the weight of voter for $i$-th up-vote, while $w_{D}^{i}$ is the weight of voter for $i$-th down-vote.
 \begin{center}
-$U = \sum$ {weighted sum of upvotes} 
+$U = \sum_{i=1}^{N} w_{U}^{i}$
 \end{center}
 \begin{center}
-$D = \sum$ {weighted sum of downvotes} 
+$D = \sum_{i=1}^{N} w_{D}^{i}$
 \end{center}
-The weight of each vote is calculated by taking the logarithm of total upvotes, adding it with the deposited $UNetworkToken$ $t$.
-$U$ Community users can purchase $UNetworkToken$ and by locking the capital away, users can enjoy extra rights. Only locked $UNetworkToken$ are added to the extra voting power. \par
 
-By reducing the liquidity of $UNetworkToken$, the stakeholders' interests are tied with the community. This way, users are more cautious while voting because they would be acting in their self-interest. Arbitrary votes would jeopardize the utility and effect of the platform.Therefore, $UNetworkToken$ stakeholders are likely to make prudent judgment. They should be given more voting power when it comes content ranking. \par
-Meanwhile, the logarithm operation prevents major stakeholders from having unchecked dictating powers.
-All of these combined with the number of upvotes one receives can objectively show the expertise of a user. 
+The weight of each vote is calculated by taking the logarithm of total up-votes prior to itself, and adding with the deposited \emph{U Network} tokens. \emph{U Community}  users can purchase \emph{U Network} tokens and enjoy more privilege by locking up their tokens into deposit. Note that only deposited tokens can empower their owner with the extra voting power. \par
+
+By reducing the liquidity of \emph{U Network} tokens, the stakeholders' interests can better align with that of the community. In this way, users become more cautious in their voting because their voting decisions have more direct connection with their own interest. This mechanism can better eliminate arbitrary votes which jeopardize the fairness and effectiveness of the platform. Therefore, \emph{U Network} token holders are more likely to make prudent judgments for the community and should be given more voting power.
+
+Meanwhile, the logarithm operation prevents major stakeholders from owning unconstrained dictating power.
+All of these combined with the number of upvotes can quantify the user's expertise as: 
 \begin{center}
-        User voting weight = $max(0, log_M r) + max (0, log_N t)$
+        $w_{U, D}^{i}$ = $max(0, log_M r) + max (0, log_N t)$
 \end{center}
-$M$ and \ $N$ are two constants, subjects to changes by the community
-\ $z$ is the larger one between \ $x$ absolute value and 1.
+$M$ and \ $N$ are two constants, subjects to changes up-on agreement of the community;
+\ $z$ simply choose the larger one between $|x|$ and 1.
 $$z =\left\{
 \begin{array}{rcl}
 |x|       &      & {if \quad |x| \geq 1}\\
 1     &      & {if \quad |x| < 1}\\
 \end{array} \right. $$
-$C$ denotes cool-down constant. To make it clear, inside $\log_{C}$ $z$, $C$ is the base. For example when $C = 10$ it means $z = 10$ can result in 1 point, $z = 100$ will result in 2 points. To put it another way, the first ten voters share a similar weight with the following 90 voters, (and even 100th to 900th voters). It means that for a popular post, the weight is decreasing as the rank of voters is increasing. The larger the $C$ is, the less of an effect a late upvote has.
-The unit of 45000 in the denominator is second, which equals to 12.5 hours. It means posts one day old would have 2 more points in ranking. In other words, posts one day older need to have 100X more votes to sustain the original ranking.  
 
-As an important ranking factor, the order of voting is crucial in both determining posts ranks and participants rewards. We need a fair and trustworthy judege, the smart contract. Each vote can be considered as a micro-payment, which is time-stamped, and paid to a smart-contract address. Each time stamp is an unsigned 64 bit integer, and the value is assigned by the validating node. The smart contract can access the time stamp to assign the order-based U-Token rewards. To prevent the 'Time Travel' attack, each verification node will only accept transactions whose time stamps are in a valid range. Therefore no malicious user can modify the time stamp of the vote to receive undeserved rewards.  
+$C$ denotes cool-down constant. To make it clear, $C$ is the base of logarithm inside $\log_{C}$ $z$. As an example, when $C = 10$ it means $\log_{C} z = 1$ when $z = 10$. Similarly,  $\log_{C} z = 2$ when $z = 100$. Obviously, the first ten voters share a similar weight with the following 90 voters, (and even 100th to 900th voters). It means that for a popular post, the weight is decreasing as the rank of voters is increasing. In other words, the up-vote has less impact when $C$ becomes larger.
+
+The number ``45000'' in the denominator has unit of second, which equals to 12.5 hours. It means that posts which was published one day before need to have 100X more votes to sustain its original ranking at current time. As such, \emph{U Network} tends to promote latest new contents but still gives high rank to very popular contents.  
+
+As an important ranking factor, the sequential order of votes is critical to determine both posts ranks and participants rewards. We need a fair and trustworthy judgment using ``smart contract''. In details, each vote can be considered as a micro-payment, which is time-stamped, and paid to a smart-contract address. Each time stamp is an unsigned 64 bit integer, and the value is assigned by the validating node. The smart contract can access the time stamp to assign the order-based \emph{U Network} token rewards. To prevent the \emph{Time Travel} attack, each verification node will only accept transactions whose time stamps are in the valid range. Therefore, no malicious user can modify the time stamp of the vote to cut in the middle of voting sequence and receive undeserved rewards.  
 
 \section{Community Role Design}
-$U$ Community is composed of regular users, content creators, content explorers, and community moderators. 
+\emph{U Community} is composed of regular users, content creators, content explorers, and community moderators. 
 \subsection{Regular Users}
-Regular users can receive points by completing a given set of tasks. Also, they can transit into content creators by posting new content. And by discovering and upvoting topics, they can be content explorers. They can also be chosen as community moderator.  
+Regular users can transform into different roles. First, they receive points by completing a given set of micro tasks. In addition, they can become content creators by posting new contents. Also, they can behave as content explorer by discovering and up-voting topics. Moreover, they can be chosen as community moderator.  
 \subsection{Content Creators}
-Content creators are core member in the development of the community. They will receive $UNetworkToken$ as rewards according to the quality of generated content. 
+Content creators are the most important contributors in the development of \emph{U community}. They will receive \emph{U Network} tokens as rewards according to the quality of generated contents. 
 \subsection{Content Explorers}
-Content Explorers are users upvote a content after viewing it thoroughly. Content explorers can upvote topics to discover quality content for the community. If agreed by more users, one can receive $UNetworkToken$ as rewards. 
+Content Explorers are users who up-vote to discover and promote high-quality contents for the community. If their promoted contents are appreciated by more users, they can receive \emph{U Network} tokens as rewards. 
 \subsection{Community Moderators}
-Community moderators are selected periodically from regular users. The probability of a user being selected is proportional to the $UNetworkToken$ one is staking. Meanwhile, being selected by the moderator will result in $UNetworkToken$ rewards.
-Community moderators ensure $U$ Community is operating smoothly without turbulence, and have privilege in determining future movement of the community. One of the most important privilege of moderator is the ability to delete improper topics. To prevent abuse of such power, authors of  deleted content can appeal. The appeal request would require a significant amount of $UNetworkToken$ deposit. Users in the community can vote on the incident. Each vote would cost small amount of $UNetworkToken$ to prevent spam voting. After appeal period, if more than half of participants supports the deletion, the appeal initiator would lose the deposit and the users who supported the appeal would also lose their $UNetworkToken$ spent in the voting process. Vice-versa. \par
+Community moderators are selected periodically from regular users. The probability of a user being selected is proportional to the \emph{U Network} tokens they are holding. As an incentive, they are rewarded with \emph{U Network} tokens for serving as the moderator.
+
+The function of community moderators is to ensure the smooth operation of \emph{U Community} without turbulence. In addition, moderators have privilege in determining future movement of the community. 
+
+One of the most important privilege of moderator is the ability to delete improper topics. To restrict moderator and prevent abuse of such power, authors of deleted contents can appeal which require a significant amount of \emph{U Network} tokens deposit. In the meantime, other  audience in the community can vote to express their opinions in the appeal process. Each vote would cost small amount of \emph{U Network} tokens to prevent spam voting. After appeal period finishes, the supporters of the deletion is dominant (e.g., more than 50\% of total participants), the appeal initiator would lose the deposit and the users who supported the appeal would also lose their \emph{U Network} tokens spent in the voting process. Vice-versa. 
+
 The formula to assign rewards for the majority voter is calculated as follows. 
 \begin{center}
     $${p}=({N}*{c} - {F})/{N_w}$$
 \end{center}
-$p$ is the reward for each users winning the appeal. $N$ is the total number of the users voting for the appeal. $c$ is the cost of casting a vote. $F$ is the processing fee goes to the platform. $N_w$ is the number of majority. This formula ensures each voter will have to use her best judgment to analysis the situation to gain rewards at the end. Therefore preventing trolls casting arbitrary votes. \par
-After the first appeal voting period there is a cool-down period, in which if either the appeal initiator or the community moderator is unsatisfied by the result. She can start a second round of appeal. The extra appeal would require exponentially more deposit than the previous one. If the latest appeal is different from the previous one, the reward allocation for the previous one is voided and the final rewards are allocated based on the latest appeal result. \par
-This process is repeated until both party reach an agreement or either one is unwilling or unable to put down appeal deposit. 
-Community moderators will automatically assign part of $UNetworkToken$ to users supporting them. However if the appeal overturns the original deletion, those $UNetworkToken$ would be rewarded to users who disapproved of the deletion.  
+$p$ is the reward for each users winning the appeal. $N$ is the total number of the users voting for the appeal. $c$ is the cost of casting a vote. $F$ is the processing fee goes to the platform. $N_w$ is the number of majority. This formula ensures each voter will have to use her best judgment to analyze the situation to gain rewards in the end, therefore, preventing trolls casting arbitrary votes. 
+
+
+After the first appeal voting period there is a cool-down period, in which if either the appeal initiator or the community moderator is unsatisfied with the result. They can start a second round of appeal. The extra appeal would require exponentially more deposit than the previous appeal. If the second appeal result is different from the previous one, the reward allocation for the previous one is canceled and the final rewards are allocated based on the second appeal result.
+
+This process is repeated until both parties reach an agreement or either one party choose to exit the appeal process. 
+Community moderators will automatically assign partial of received \emph{U Network} tokens distribution to users supporting them. However, if the appeal result revokes the original deletion, those \emph{U Network} tokens would be rewarded to users who disapproved of the deletion.  
 \section{Token Incentive Design}
-$UNetworkToken$ represents the right to use $U$ Community and its related applications. It's the link between value and content and the link between users.
-$UNetworkToken$ is the value carrier of the $U$ Community. The larger users $U$ Community attracts, the more quality content is produced. $UNetworkToken$, with limited total supply, would benefits all the $UNetworkToken$ stakeholders when the market demand increases.  
-$U$ Network users are not only customers of the platform, but also beneficiaries if the community thrives. 
+\emph{U Network} tokens represents the right to use \emph{U Community} and its related applications. It's the connection between rewards and contents and, similarly, the connection between users.
+
+\emph{U Network} tokens is the value carrier of the \emph{U Community}. The larger users \emph{U Community} attracts, the more quality content is produced. \emph{U Network} tokens, with limited total supply, would benefit all the \emph{U Network} tokens holders when more high-quality contents are created in the community and the demand of tokens increases.  From this point of view, \emph{U Network} users are not only customers of the platform, but also beneficiaries if the community thrives in the long term. 
 	
 \subsection{Incentives for Content Creators, Explorers, and Moderators} 
-To match `Content contribution' with `reward incentives', in $U$ Community content-based prediction market, both quality content creator and content explorer will receive $UNetworkToken$ as rewards.
-Each user can both `upvote' and `downvote' a post. Posts being downvoted would be contained. Thus trolling content would not be spread across the network. 
-There are two major sources of $UNetworkToken$ rewards for content creators and content explorers. One is user purchased $UNetworkToken$, the other one is $UNetworkToken$ converted from reward points  for completing community tasks.
-Those points are gradually released from the system, `content-reward pool'. There is a limit on the daily release. So all the contents have to contend with each other for the limited daily rewards. The 'content-reward pool' will shrink yearly. This policy is set to attract users at an early stage, and aims to develop a network effect to build user base. \par
-The platform will charge 5\% of commission for the reward assigned to content creators and explorers, to ensure the stability of the $U$ Community economy model.
-\subsection{Socialized Investment, Smart-contract based Co-investing}
-Investors can choose to upload trading strategies and order history to $U$ Network to make future decisions in an organized fashion. Also，seasoned investors can share their trading strategies with the whole community, and provide relevant technical or fundamental analysis. Other users can pay to view such content, and become an co-investor of such strategies. With the help of smart contracts, $U$ Community provides a decentralized, reliable way for users to control their own assets, and automatically, completely imitates/clone professional investor's strategy. If the following user made profit by doing so, the smart contract will carry part of the profit to the author of the original strategy. 
-In the future, users can use $UNetworkToken$ to purchase $U$ Community platform investment advice from trusted third party applications. 
-\subsection{Survey, Voting, Prediction Market}
-$U$ Community will provide a way for user to pay to do survey and vote to gain more insights into the information of blockchain assets. $U$ Community will release products with built-in prediction market. $U$ Community will support native prediction markets that are extensible, efficient and accurate.
-\subsection{Advertisement}
-Good content deserves to be spread. Users can promote information to targeted readers. While spreading fake or irreverent content will be punished.  
-Off site collaborators will also be able to publish advertisements inside $U$ Community. However, the content will be strictly reviewed by the community moderators. All the revenue will contribute to the content-reward pool. 
-\subsection{Gift}
-Sending $UNetworkToken$ as a reward is an efficient way of interaction between community celebrities and fans. It's good community culture to pay reward to those who you have been receiving help from. Posts receiving higher rewards will have a higher exposure in the community. Users can pay $UNetworkToken$ to unlock extra features like medal and skins. 5\% of the reward will go to 'content-reward pool'. The rest will be received by the beneficiaries. 
-\subsection{Paid Subscription, Paid Q\&A, Pay to Message}
-Users can pay $UNetworkToken$ to request private interactions with influential professionals, and receive personalized advice. There are three forms of interaction: paid Subscription, paid Q\&A, pay to message. 
-Paid subscription provides a way for influential individuals to make monetary profit with their knowledge and influence. After receiving a given amount of upvotes, content creators can setup a private group or private channel to provide more insightful information to those who are willing to pay $UNetworkToken$ as an entry fee. 
+To motivate participants in \emph{U Community} to make their contributions, both high-quality content creator and content explorer will receive \emph{U Network} tokens as rewards.
+
+Each user can either ``up-vote'' or ``down-vote'' a piece of contents with a small amount of token as the cost. Contents being down-voted would be degraded and eventually disappear in the community with a lot of down-votes. Thus trolling content would not be spread across the network. 
+
+There are two major sources of \emph{U Network} tokens rewards for content creators and content explorers. One is purchase of \emph{U Network} tokens in the exchange, the other source is to convert reward points received from completion of micro tasks into \emph{U Network} tokens. Those points are gradually released from the system, called ``content-reward pool''. There is a limit on the number of points that can be released daily, and the ``content-reward pool'' will shrink to be empty eventually. This policy is set to attract users to receive points by discovering high-quality contents at early stage. 
+
+Note that the platform will charge 5\% of token distribution for the reward assigned to content creators and explorers, which ensures the stability and sustainability of the \emph{U Community} economy model.
+
+%\subsection{Socialized Investment, Smart-contract based Co-investing}
+%Investors can choose to upload trading strategies and order history to \emph{U Network}  to make future decisions in an organized fashion. Also，seasoned investors can share their trading strategies with the whole community, and provide relevant technical or fundamental analysis. Other users can pay to view such content, and become an co-investor of such strategies. With the help of smart contracts, \emph{U Community} provides a decentralized, reliable way for users to control their own assets, and automatically, completely imitates/clone professional investor's strategy. If the following user made profit by doing so, the smart contract will carry part of the profit to the author of the original strategy. 
+%In the future, users can use \emph{U Network} tokens to purchase \emph{U Community} platform investment advice from trusted third party applications. 
+%\subsection{Survey, Voting, Prediction Market}
+%\emph{U Community} will provide a way for user to receive token rewards by conducting survey, which greatly increase the completion rate of survey in the community. \emph{U Community} will release products with built-in prediction market and support native prediction markets that are extensible, efficient and accurate.
+%\subsection{Incentive for Advertisement}
+%High-quality contents deserves to be promoted to more audience.  \emph{U Community} can help promote information to target audience with specific characteristics. While spreading fake or irreverent content will be punished.  
+%Off site collaborators will also be able to publish advertisements inside \emph{U Community}. However, the content will be strictly reviewed by the community moderators. All the revenue will contribute to the content-reward pool. 
+
+%\subsection{Incentive Gift}
+%Sending \emph{U Network} tokens as a reward is an efficient way of interaction between community celebrities and fans. It's good community culture to pay reward to those who you have been receiving help from. Posts receiving higher rewards will have a higher exposure in the community. Users can pay \emph{U Network} tokens to unlock extra features like medal and skins. 5\% of the reward will go to 'content-reward pool'. The rest will be received by the beneficiaries. 
+
+\subsection{Incentive for Knowledge Sharing}
+
+Users can pay \emph{U Network} tokens to request private interactions with creators of high-quality contents, and receive personalized comments. In this way, creators receive token incentive and are motivated to share more knowledge information to their audience in three types of interaction: paid Subscription, paid Q\&A, pay to message. 
+Paid subscription provides a way for creators to make monetary profit with their knowledge and influence. After receiving a given amount of up-votes, content creators can setup a private group or private channel to provide more insightful information to audience who are willing to pay \emph{U Network} tokens as subscription fee. 
 	
-Users can also choose a more active way of interaction. After paying a certain amount of $UNetworkToken$, users can ask specific questions to a specific individual. The answer can be set visible to the public or private, in which other parties need to pay to 'peek'. The payment is awarded proportionally to the initiator based on the quality.   							
-To filter unsolicited messages, users can set minimal payment that has to come with a private message. Money is an effective way to filter unworthy communication and harassment. 
-The platform takes 5\% commission from paid subscription, paid Q\&A, pay to message. 
+Users can also choose a more active interactive approach. After paying a certain amount of \emph{U Network} tokens, users can ask specific questions to content creators. The answer can be set visible to the public or in private, and other audience need to pay to ``peek'' the conversation.
+						
+The third approach is messaging between creators and audience. To filter unsolicited messages, creators can set minimal token cost that has to be paid in order to send a private message. Audience can become more cautious to send meaningful messages in the same time.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 FEB 2018 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 FEB 2018 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -302,26 +302,20 @@ Package pdftex.def Info: bft_perf.png used on input line 94.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28 <./bft_perf.png>] [29]
-Underfull \vbox (badness 5217) has occurred while \output is active []
-
- [30]
-[31]) [32]
+ [28 <./bft_perf.png>] [29] [30] [31]) [32]
 \openout2 = `community.aux'.
 
  (./community.tex
 Chapter 4.
-[33
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [33
 
 
 
-] [34] [35] [36] [37]
-Overfull \hbox (8.35178pt too wide) in paragraph at lines 85--85
-[]\T1/cmr/bx/n/14.4 Socialized In-vest-ment, Smart-contract based Co-investing 
-
- []
-
-[38]) [39] [40]
+]
+[34] [35] [36] [37] [38] [39]) [40]
 \openout2 = `roadmap.aux'.
 
  (./roadmap.tex
@@ -390,25 +384,26 @@ fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
-pe1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
-1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/cm-super/sfbi1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
-blic/cm-super/sfbi2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
-/cm-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
-m-super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
-super/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-su
-per/sfrm0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-supe
-r/sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
-sfrm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
-rm1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti
-1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti12
-00.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200
-.pfb>
-Output written on main.pdf (49 pages, 822970 bytes).
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/cm-super/sfbi1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbi1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbi2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/cm-super/sfbx1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/c
+m-super/sfbx1440.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-
+super/sfbx1728.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-su
+per/sfbx2488.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm0700.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/
+sfrm0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
+rm1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
+1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti10
+00.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1200
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1200.p
+fb>
+Output written on main.pdf (49 pages, 830379 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 179 compressed objects within 2 object streams
+ 270 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
