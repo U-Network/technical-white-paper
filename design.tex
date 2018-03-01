@@ -21,13 +21,22 @@ As such, the \emph{U Network} platform implements a mechanism that redistributes
 To create an efficient content-value driven prediction market, the most important component is the incentive mechanism. In this section, we further explain the economic incentive design in \emph{U Network}.
 
 \subsection{Cost of Voting}
-In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of $k$-th up-vote as a function in the below:
+In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of $k$-th up-vote $C_{k}$ as a function in the below:
  \begin{center}
 $$C_{k} = p_0 + p * log(n_{k})$$
 \end{center}
-where $C$ is the cost for current up-vote, $p_0$ is the initial cost for the first up-voter which is calculated as the predicted popurlarity, $p$ is the reference basis cost and $n_{k}$ is the total number of up-voters until $k$-th up-vote. 
+where $p_0$ is the initial cost for the first up-voter and set by the author. If authors have strong belief in the quality of their contents, they may set a very high initial voting cost $p_0$ and receive more rewards. However, if authors set high $p_0$ without corresponding high-quality contents, the explorer will not up-vote their contents, therefore, authors receive no rewards at all. 
 
-Clearly, this function determines the dynamic cost for each up-vote.  With more up-voting for the content, $N$ becomes larger and thus $p * log(N)$ and resulting $C$ increases.  Here, logarithm function is used to suppress unexpected increase of function value. Otherwise, the cost $C$ becomes extremely high so no more users would like to up-vote. Then the incentive mechanism would fail.
+ $p$ is the reference cost that is a small fraction of $p_0$ defined as $p = \alpha * p_0$ ($0 \leq \alpha \leq 1$).  The value of $\alpha$ will be  updated each time user up-votes according to the popularity of the contents: 
+  \begin{center}
+ $$ \alpha = \frac{ n_{k}^{U} /n_{k}^{D} }{\sum_{i=1}^{M} n_{i}^{U} / n_{i}^{D} } $$
+ \end{center}
+ 
+ $n_{k}^{U} /n_{k}^{D}$ is the ratio of up-vote number over down-vote number for $k$-th content, and it will be normalized with the total sum of ratios for all contents at current time. As such, the ratio $\alpha$ is guaranteed to be in the range of $[0, 1]$. In this way, high-quality contents is more popular and cost of up-vote becomes more expensive along the time.
+ 
+ $n_{k}$ is the total number of up-voters until $k$-th up-vote. 
+
+Clearly, this function determines the dynamic cost for each up-vote.  With more up-voting for the content, $n_k$ becomes larger and thus $p * log(n_k)$ and resulting $C_k$ increases.  Here, logarithm function is used to suppress unexpected increase of function value. Otherwise, the cost $C_k$ becomes extremely high so no more users would like to up-vote. Then the incentive mechanism would fail.
 
 \subsection{Author Reward}
 According to the sequential order of upvoting, the cost of \emph{U Network} tokens coming from all up-voters will be distributed to the creator and early up-voters. The formula of author reward is derived from harmonic series: 

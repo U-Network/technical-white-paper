@@ -10,14 +10,14 @@
 \contentsline {section}{\numberline {2.2}Economic Incentive Design}{14}
 \contentsline {subsection}{\numberline {2.2.1}Cost of Voting}{14}
 \contentsline {subsection}{\numberline {2.2.2}Author Reward}{15}
-\contentsline {subsection}{\numberline {2.2.3}Content Explorer Reward}{15}
+\contentsline {subsection}{\numberline {2.2.3}Content Explorer Reward}{16}
 \contentsline {subsection}{\numberline {2.2.4}Other Contributor Rewards}{17}
-\contentsline {subsection}{\numberline {2.2.5}Delayed Settlement}{17}
-\contentsline {subsection}{\numberline {2.2.6}Downvote}{17}
-\contentsline {section}{\numberline {2.3}Functionality Design}{18}
-\contentsline {subsection}{\numberline {2.3.1} Information Valuation}{18}
+\contentsline {subsection}{\numberline {2.2.5}Delayed Settlement}{18}
+\contentsline {subsection}{\numberline {2.2.6}Downvote}{18}
+\contentsline {section}{\numberline {2.3}Functionality Design}{19}
+\contentsline {subsection}{\numberline {2.3.1} Information Valuation}{19}
 \contentsline {subsection}{\numberline {2.3.2}Incentive Community With U Network Token}{19}
-\contentsline {subsection}{\numberline {2.3.3}Revolutionary Economy Model}{19}
+\contentsline {subsection}{\numberline {2.3.3}Revolutionary Economy Model}{20}
 \contentsline {chapter}{\numberline {3}\emph {U Network} Platform Implementation}{21}
 \contentsline {section}{\numberline {3.1}Requirements for Blockchain Platform}{21}
 \contentsline {section}{\numberline {3.2}Technical Architecture}{22}
