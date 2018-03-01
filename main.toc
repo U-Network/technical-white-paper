@@ -24,7 +24,7 @@
 \contentsline {section}{\numberline {3.3}UBFT Consensus Protocol}{23}
 \contentsline {subsection}{\numberline {3.3.1}UBFT}{23}
 \contentsline {subsection}{\numberline {3.3.2}Terms Used}{25}
-\contentsline {subsection}{\numberline {3.3.3}Assumption of Protocol}{25}
+\contentsline {subsection}{\numberline {3.3.3}Assumption of Protocol}{26}
 \contentsline {subsection}{\numberline {3.3.4}Security of Protocol}{26}
 \contentsline {subsection}{\numberline {3.3.5}Performance}{27}
 \contentsline {section}{\numberline {3.4}Transaction Prococol}{29}
@@ -32,8 +32,8 @@
 \contentsline {subsection}{\numberline {3.5.1}Content Creation and Storage}{30}
 \contentsline {subsection}{\numberline {3.5.2}Content Search}{31}
 \contentsline {subsection}{\numberline {3.5.3}Improvements}{31}
-\contentsline {section}{\numberline {3.6}Token Incentive for Resources}{31}
-\contentsline {subsection}{\numberline {3.6.1}Storage Costs}{31}
+\contentsline {section}{\numberline {3.6}Token Incentive for Resources}{32}
+\contentsline {subsection}{\numberline {3.6.1}Storage Costs}{32}
 \contentsline {subsection}{\numberline {3.6.2}Bandwidth Costs}{32}
 \contentsline {subsection}{\numberline {3.6.3}Computation Costs}{32}
 \contentsline {chapter}{\numberline {4}\emph {U Community} - First Application in U Network Platform}{33}

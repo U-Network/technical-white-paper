@@ -49,7 +49,9 @@ The system architechture is shown in \ref{fig:system_architecture}. There are th
     \item ) No delegates needed, while improving security and performance
 \end{enumerate}
 
+% Users can stake tokens to get extra features. But we need to determine how users can remove their staked tokens. How oabut we say: if you want to remove staked tokens, you have to wait 1 year but tokens release weekly over 52 weeks. This is similar to the STEEM Power removal model. (May consider tto move this paragraph to other places if needed)
 
+Note that user should not be able to withdraw all their staked tokens, in particular when they have a large volume of stake. This is because sudden transfer of massive staked tokens will cause fluctuation of voting powers in the market. Therefore, \emph{U Network} set a withdraw time window which is 52 weeks right now and can be changed upon the agreement of entire community. As such, user can withdraw partial of their staked tokens every week and cause no significant impact to the voting power of the community.
 
 \subsection{Terms Used}
     \textit{Nodes} are blockchain participants that are connected to each other by peer-to-peer network, they can be running on different hardwares and operating systems and talk to each other by \textit{gossip protocol}, which is essentially a continuous broadcast protocol with signed content. Each \textit{node} maintain a full record of the blockchain history. \textit{SPV} clients are users with public address in the network, they can be running on a web browser, mobile phones, tablets, etc. \textit{SPV} clients don't maintain full records of the whole blockchain but rather those related to themselves.
