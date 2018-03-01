@@ -21,20 +21,20 @@ As such, the \emph{U Network} platform implements a mechanism that redistributes
 To create an efficient content-value driven prediction market, the most important component is the incentive mechanism. In this section, we further explain the economic incentive design in \emph{U Network}.
 
 \subsection{Cost of Voting}
-In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of each up-vote as a function in the below:
+In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of $k$-th up-vote as a function in the below:
  \begin{center}
-$$C = p_0 + p * log(N)$$
+$$C_{k} = p_0 + p * log(n_{k})$$
 \end{center}
-where $C$ is the cost for current up-vote, $p_0$ is the initial cost for the first up-voter, $p$ is the reference basis cost and $N$ is the total number of up-voters until now. 
+where $C$ is the cost for current up-vote, $p_0$ is the initial cost for the first up-voter which is calculated as the predicted popurlarity, $p$ is the reference basis cost and $n_{k}$ is the total number of up-voters until $k$-th up-vote. 
 
 Clearly, this function determines the dynamic cost for each up-vote.  With more up-voting for the content, $N$ becomes larger and thus $p * log(N)$ and resulting $C$ increases.  Here, logarithm function is used to suppress unexpected increase of function value. Otherwise, the cost $C$ becomes extremely high so no more users would like to up-vote. Then the incentive mechanism would fail.
 
 \subsection{Author Reward}
 According to the sequential order of upvoting, the cost of \emph{U Network} tokens coming from all up-voters will be distributed to the creator and early up-voters. The formula of author reward is derived from harmonic series: 
 \begin{center}
-$$R = C * \sum_{k=1}^{N}  (\lambda + 1)/{(k + \lambda)}$$
+$$R = \sum_{k=1}^{N}  C_{k} * (\lambda + 1)/{(k + \lambda)}$$
 \end{center}
-$N$ is the total number of upvotes within a given period of time. $k$ is the rank of each up-vote. $C$ is the cost for each up-vote. $\lambda$ is a weight parameter: the larger $\lambda$ determines more rewards that the author receives. 
+$N$ is the total number of upvotes within a given period of time. $k$ is the rank of each up-vote. $C_{k}$ is the cost for $k$-th up-vote. $\lambda$ is a weight parameter: the larger $\lambda$ determines more rewards that the author receives. 
 
 If $\lambda = 0$, all of the token payment from the \emph{first} up-voter would be distributed to the author, while only half of the token payment from the \emph{second} up-voter will be paid to the author. 
 
@@ -62,7 +62,7 @@ In this mechanism, the content author would take the largest piece of the income
 \subsection{Other Contributor Rewards}
 At this point, there is a question that may rise: ``What if users do not have any \emph{U Network}  tokens? Can they still contribution to the community?''
 
-The short answer is no,users without \emph{U Network}  token can still contribute time and attention instead of paying token for up-vote. Based on Principle No.1 (There Ain't No Such Thing As A Free Lunch), users can receive \emph{U Network}  points by spending time and energy in completing micro tasks for the community. For example, they may receive points by signing-in daily, referring friends and distributing the high-quality contents to other channels. These points can be converted into \emph{U Network}  tokens and thus used for voting.  
+The short answer is no,users without \emph{U Network}  token can still contribute time and attention instead of paying token for up-vote. Based on Principle No.1 (There Ain't No Such Thing As A Free Lunch), users can receive \emph{U Network}  points by spending time and energy in completing micro tasks for the community. For example, they may receive points by signing-in daily, referring friends and distributing the high-quality contents to other channels. These points can be converted into \emph{U Network}  tokens with fixed 1 : 1 ratio and thus used for voting.  
 
 To prevent malicious spam sign-up and web-bot attack, we impose a restriction: there is a dynamic hard-cap on how many points one single user can earn considering the community economy and user activities. As such, users are encouraged to create or promote valuable contents to earn \emph{U Network} tokens without limit or cap. 
 
@@ -83,6 +83,8 @@ $$\hat C = \hat p_0 + \hat p * log(N)$$
 Here, $\hat p_0$ is the initial cost for the first down-voter, $\hat p$ is the reference basis cost and $N$ is the total number of down-voters until now. 
  
 If the contents receive more down-votes, the earlier down-voters receive higher expected rewards from the token payment of later down-voters. The distribution of token rewards to explorers is similar to that for up-vote, while the content creator receives no reward at all. 
+
+Noted that when the contents receive more up-votes than down-votes, both the up-voters and author receive the token rewards. However, the down-voters lose their tokens which will be deposited into the content reward pool and be used for future rewards. This incentive mechanism motivates audience to make their best judgment and prediction about the quality and value of contents.
 
 
 
