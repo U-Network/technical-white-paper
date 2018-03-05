@@ -21,43 +21,30 @@ As such, the \emph{U Network} platform implements a mechanism that redistributes
 To create an efficient content-value driven prediction market, the most important component is the incentive mechanism. In this section, we further explain the economic incentive design in \emph{U Network}.
 
 \subsection{Cost of Voting}
-In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? The underlying principle is quite simple: early up-voter pay less cost than late up-voters, therefore, early up-voters receive higher expected rewards coming from the payment of late up-voters. As such, we define the cost of $k$-th up-vote $C_{k}$ as a function in the below:
- \begin{center}
-$$C_{k} = p_0 + p * log(n_{k})$$
-\end{center}
-where $p_0$ is the initial cost for the first up-voter and set by the author. If authors have strong belief in the quality of their contents, they may set a very high initial voting cost $p_0$ and receive more rewards. However, if authors set high $p_0$ without corresponding high-quality contents, the explorer will not up-vote their contents, therefore, authors receive no rewards at all. 
+In \emph{U Network} , any up-vote would cost a small amount of tokens, but how to determine the amount of tokens for each vote (denoted as $C$)? 
 
- $p$ is the reference cost that is a small fraction of $p_0$ defined as $p = \alpha * p_0$ ($0 \leq \alpha \leq 1$).  The value of $\alpha$ will be  updated each time user up-votes according to the popularity of the contents: 
-  \begin{center}
- $$ \alpha = \frac{ n_{k}^{U} /n_{k}^{D} }{\sum_{i=1}^{M} n_{i}^{U} / n_{i}^{D} } $$
- \end{center}
- 
- $n_{k}^{U} /n_{k}^{D}$ is the ratio of up-vote number over down-vote number for $k$-th content, and it will be normalized with the total sum of ratios for all contents at current time. As such, the ratio $\alpha$ is guaranteed to be in the range of $[0, 1]$. In this way, high-quality contents is more popular and cost of up-vote becomes more expensive along the time.
- 
- $n_{k}$ is the total number of up-voters until $k$-th up-vote. 
-
-Clearly, this function determines the dynamic cost for each up-vote.  With more up-voting for the content, $n_k$ becomes larger and thus $p * log(n_k)$ and resulting $C_k$ increases.  Here, logarithm function is used to suppress unexpected increase of function value. Otherwise, the cost $C_k$ becomes extremely high so no more users would like to up-vote. Then the incentive mechanism would fail.
+//TODO each upvote should be a fixed cost, but token is with a floating price  
 
 \subsection{Author Reward}
 According to the sequential order of upvoting, the cost of \emph{U Network} tokens coming from all up-voters will be distributed to the creator and early up-voters. The formula of author reward is derived from harmonic series: 
 \begin{center}
-$$R = \sum_{k=1}^{N}  C_{k} * (\lambda + 1)/{(k + \lambda)}$$
+$$R = \sum_{k=1}^{N}  C_{k} * 1/{k}$$
 \end{center}
-$N$ is the total number of upvotes within a given period of time. $k$ is the rank of each up-vote. $C_{k}$ is the cost for $k$-th up-vote. $\lambda$ is a weight parameter: the larger $\lambda$ determines more rewards that the author receives. 
+$N$ is the total number of upvotes within a given period of time. $k$ is the rank of each up-vote. $C_{k}$ is the cost for $k$-th up-vote. 
 
-If $\lambda = 0$, all of the token payment from the \emph{first} up-voter would be distributed to the author, while only half of the token payment from the \emph{second} up-voter will be paid to the author. 
+In this case, all of the token payment from the \emph{first} up-voter would be distributed to the author, while only half of the token payment from the \emph{second} up-voter will be paid to the author. 
 
-If $\lambda = 0.5$, the \emph{first} up-voter would contribute all token payment to the author, and the \emph{second} up-voter would contribute $3/5$ token payment to the author. 
-
+Another part of author reward comes from author reward pool.
+//TODO our details of distributing rewards.
 
 \subsection{Content Explorer Reward}
 The up-voters who explore and promote high-quality contents with tokens will receive rewards for their contributions to the community. The reward formula for explorer $R_r$ is below:
 \begin{center}
-$$R_r = C * \sum_{k=r+1}^{N} 1/{(k + \lambda)}$$
+$$R_r = C * \sum_{k=r+1}^{N} 1/{(k)}$$
 \end{center}
 $r$ is the rank of explorer or up-voters. If the total number of up-voters is fixed, the earlier up-votes receive higher expected rewards. This mechanism distributes more incentives to up-voters in the early stage, therefore, it encourages voters to discover valuable contents earlier.
  
-According this formula, if $\lambda = 0$, the second up-voter would only contribute $1/2$ tokens to the content author, while the remaining $1/2$ tokens would be paid to the \emph{first} up-voter. As such, the third up-voter would pay $1/3$ token to each of content author, first up-voter, and the second up-voter. It's mathematically provable that the first $35\%$ of up-voters have positive expected return.     
+According this formula, the second up-voter would only contribute $1/2$ tokens to the content author, while the remaining $1/2$ tokens would be paid to the \emph{first} up-voter. As such, the third up-voter would pay $1/3$ token to each of content author, first up-voter, and the second up-voter. It's mathematically provable that the first $35\%$ of up-voters have positive expected return.     
 \begin{center}
 $$R_r = C * \sum_{k=r+1}^{N} \frac{1}{k}$$ 
 \end{center}
